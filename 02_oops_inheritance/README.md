@@ -100,15 +100,6 @@ class Pet(object):
 * Before writing any real code just make bullets of what is your goal, what is your endpoint, and how can you get there
 * Plan out your app, what classes will you have, what methods will be inside of those classes
 
-***PUDB***
-
-* Install this using `pip3 install pudb`
-* Run a file using pudb with `python3 -m pudb.run filename.py`
-* GO THROUGH THE TUTORIAL BEFORE TRYING THIS ON YOUR OWN
-* PUDB
-    * You **must** debug systematically.
-    * Here's an online tutorial: [http://heather.cs.ucdavis.edu/~matloff/pudb.html](http://heather.cs.ucdavis.edu/~matloff/pudb.html)
-
 #### Other best practices
  
 * Inside your terminal make use of 
