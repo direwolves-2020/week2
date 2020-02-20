@@ -100,23 +100,23 @@ class Show:
         self.release = release
         self.genre = genre
 
-    def give_cast(self):
+    def cast(self):
         return self.cast
 
-    def give_char(self):
+    def char(self):
         return self.characters
 
-    def give_date(self):
+    def date(self):
         return self.release
 
-    def give_genre(self):
+    def genre(self):
         return self.genre
 
-p_cast = "Damian Lewis, Paul Giammatti"
-p_char = "Bobby Axelrod, Chuck Rhoades"
+p_cast = "Damian Lewis"
+p_char = "Chuck Rhoades"
 
 p_s_show = Show(p_cast , p_char , 2016, 'Drama')
-top_gun = Show("Tom Cruise, Val Kilmer", "Maverick, Iceman", 1986, "Action")
+top_gun = Show("Tom Cruise", "Maverick", 1986, "Action")
 aos = Show("Chloe Bennett, Clark Gregg, Ming-Na Wen", "Skye, Coulson, May", 2013, "Comic")
 
 
@@ -136,45 +136,24 @@ print(aos.release()) === 2013
 
 * Create a class called `Athlete`
 * Create three or more instances using that `Athelete` class
-* Every athlete has two legs, two arms, and is_rich(true)
+* Every athlete has two legs, two arms, and is_rich: (boolean variable set to true)
 * Each athlete has THEIR OWN name, sport, team, height, weight
 
-#### Part 6 - Scope
+#### Part 6 - Instance, Class and Static Methods
+ * Similar to variables, you also have instance methods. 
+	* These are methods that you call on an instance of a class (object: Since an object is the instance of a class)
+	* They have full access to the instance variables (state) of the object, which it accesses using the provided `self` variable
 
-* Scope works inside out
-* The methods and variables that are local will have access to those outside of it, however, the outside does not have access to the inside.
-* Think about Russian Nesting Dolls
-* `return` is what allows us to move values and variables between two different things
-* Take a look at the example below:
+ * At the class level, we can also have class methods and static methods
+	* These are defined with the decorator `@classmethod` and `@staticmethod`
+	* These methods **do not** have access to the state of the object, since they are not associated with any particular instance. Instead they are associated to the class
+	* The class and static methods can be invoked on the Class (ClassName.class_method(), or ClassName.static_method())
+	* These methods are similar in that they do not affect the state of any object. They are used to perform stateless operations in a class.   
 
-```
-name = "Jason"
+ * See Sample code	
 
-def hello():
-	name = "Barry"
-	return "Hello " + name
 
-print(hello()) === "Hello Barry"
-```
-* The above example will print "Hello Barry"
-* The `hello` function will look inside of it's local scope for a variable called `name`. Since if found `name` it will not bother looking at any outer scope
-* Let's take a look at another example
-
-```
-name = "Jason"
-
-def hello():
-	name = "World"
-	return "Hello " + name
-	
-def goodbye():
-	return "Goodbye " + name
-
-print(hello()) === "Hello World"
-print(goodbye()) === "Goodbye Jason"
-```
-
-#### Part 7 - Dunder Methods
+#### Part 6 - Dunder Methods
 Also known as `magic methods`. 
 
  * Start and end with double underscores

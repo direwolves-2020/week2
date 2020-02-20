@@ -9,12 +9,6 @@
 * Utilize the terminal to help research
 
 ---
-### Context
-
-* This is the last topic of object oriented programming.
-* Inheritance allows us to organize our code every more regarding objects
-
----
 ### Lesson
 
 #### Part 1 - OOP 5 min recap
@@ -26,6 +20,30 @@
 
 #### Part 2 - Inheritance
 
+ * Allows you to create `derived` classes, that `inherit` code from another pre-defined class
+ * The inheriting class is called a `sub-class` or `child-class`, the class being inherited from is the `parent class` or `base class`.
+ * The sub class will inherit all of the methods and attributes of the base class
+ * The inherited methods and attributes can be `overridden`: The child class may choose to redefine an inherited method which will take precedence over the inherited code
+    * Think of inheritence as an attempt to model `specialization` in the real world. 
+    * As you go from Parent to Children classes you go from general to specific / concrete. 
+    * eg. Vehicle -> Car -> Suv  or Vehicle -> Bike -> Mountain Bike   `IS-A` relationship
+    * See: Sample Code
+ * The sub-class can also have methods of it's own in addition to the inherited code
+    * eg. The class Bike will have a method `pedal` which doesn't exist in the parent Vehicle class
+ * Python supports Multiple Inheritence
+    * You do this by specifying multiple base classes in the class definition
+    * Can lead to complex code
+ 
+##### Abstract Classes
+
+ * Base classes can be set as `abstract` but do not want to allow instances of these classes to get created
+ * Used to force uniformity in sub-classes by having them adhere to the interface of the base abstract class. 
+ * Used to model Abstract concepts in the real world
+ * eg. The Vehicle Base class could be defined as Abstract
+    * The drive method could have been set as abstract as well which would force all sub-classes to override and implement it
+ * Done using the `abc` module: `from abc import ABC, abstractmethod`   
+
+##### Exercise 
 * Make a class Pet
 * Make a class Dog
 * Make a class Cat
@@ -46,9 +64,9 @@ class Pet:
 
 class Dog(Pet):
 
-    def __init__(self,name, age, fluffy):
+    def __init__(self, name, age, breed):
         Pet.__init__(self, name, age)
-        self.fluffy = fluffy
+        self.breed = breed
 
     def speak(self):
         print("Bark Bark")
@@ -62,7 +80,7 @@ class Cat(Pet):
     def speak(self):
         print("Meow")
 
-shadow = Dog(name = "Shadow", age = 17, fluffy = "yes")
+shadow = Dog(name = "Shadow", age = 17, breed = "Labrador")
 
 lucy = Cat(name = "Lucy", age = 13)
 
@@ -70,6 +88,7 @@ shadow.eyes
 lucy.legs
 shadow.speak()
 lucy.speak()
+
 ```
 * The local method takes precedent over the parent method
 * Brought up in class: If all pets have a name and an age we can put it in the parents `init` method
