@@ -153,7 +153,7 @@ print(aos.release()) === 2013
  * See Sample code	
 
 
-#### Part 6 - Dunder Methods
+#### Part 7 - Dunder Methods
 Also known as `magic methods`. 
 
  * Start and end with double underscores
