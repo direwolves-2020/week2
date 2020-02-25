@@ -15,51 +15,8 @@
 ---
 ### Lesson
 
-#### Part 1 - Linked List
 
-* The concept of Linked List is to have a list of values to search through. 
-* This sounds similar to an array but it is very different, with it's own advantages and disadvantages
-* A `Linked List` stores data in `nodes`
-* Each node will contain two things. A `value` that node is storing, and a `pointer` that will point to the next node in the list
-* The first node in a linked list is known as the `head`
-
-***So how is this different from python list, or arrays in other languages?***
-
-* With linked list we are not storing/declaring our data set initially. Instead we are only looking at one node at a time. This will save us memory. 
-* The advantage to this versus an array/list is we will not use as much memory to navigate through a list of values. 
-* Imagine if we had an extremely large data set. We wouldn't want to store it in memory just to loop through it. 
-* The disadvantage to this is since we are not declaring all the values up front we do not have the ability to start a search at a specific point in time. We have to loop through every node until we find what we want. 
-* We don't have to declare how big the linked list will be, unlike looping through an array
-
-***Five Min Exercise***
-
-* How do we add a new node in a linked list? 
-* Draw a diagram with three nodes: A --> B --> C
-* How would you enter a node called "X" in between A and B?
-
-***Answer***
-
-* Placing a node X between two nodes B and C
-* Make the pointer on the X node point to the value in the C node 
-* Make the B next pointer point to the X node
-
-```
-* temp  = A.next
-* A.next = X
-* X.next = temp
-
-OR more simply
-
-* X.next = B
-* A.next = X
-```
-* The top way with `temp` takes into account how we have to loop through a linked list. The second set in the box is just for demonstration
-* Remember that the only sense of direction we get in a linked list is through their `next` pointer. 
-* Traveling through an entire linked list one by one is `Big O of n` or "O(n)"
-* If a nodes next pointer is `null` we know we are at the end of the list
-
-
-#### Part 2 - Big O Notation
+#### Part 1 - Big O Notation
 
 * Big O Notation is a way to check/describe how efficient an algorithm is. That is how long it takes to run
 
@@ -116,6 +73,49 @@ def my_func():
 	* If we had a function with three loops, loop A was a stand alone, and loop C was nested in loop B it would be `O(n + n^2)`. We would drop the smaller n in this equation for the same reason as the previous example
 
 
+#### Part 2 - Linked List
+
+* The concept of Linked List is to have a list of values to search through. 
+* This sounds similar to an array but it is very different, with it's own advantages and disadvantages
+* A `Linked List` stores data in `nodes`
+* Each node will contain two things. A `value` that node is storing, and a `pointer` that will point to the next node in the list
+* The first node in a linked list is known as the `head`
+
+***So how is this different from python list, or arrays in other languages?***
+
+* With linked list we are not storing/declaring our data set initially. Instead we are only looking at one node at a time. This will save us memory. 
+* The advantage to this versus an array/list is we will not use as much memory to navigate through a list of values. 
+* Imagine if we had an extremely large data set. We wouldn't want to store it in memory just to loop through it. 
+* The disadvantage to this is since we are not declaring all the values up front we do not have the ability to start a search at a specific point in time. We have to loop through every node until we find what we want. 
+* We don't have to declare how big the linked list will be, unlike looping through an array
+
+***Five Min Exercise***
+
+* How do we add a new node in a linked list? 
+* Draw a diagram with three nodes: A --> B --> C
+* How would you enter a node called "X" in between A and B?
+
+***Answer***
+
+* Placing a node X between two nodes B and C
+* Make the pointer on the X node point to the value in the C node 
+* Make the B next pointer point to the X node
+
+```
+* temp  = A.next
+* A.next = X
+* X.next = temp
+
+OR more simply
+
+* X.next = B
+* A.next = X
+```
+* The top way with `temp` takes into account how we have to loop through a linked list. The second set in the box is just for demonstration
+* Remember that the only sense of direction we get in a linked list is through their `next` pointer. 
+* Traveling through an entire linked list one by one is `Big O of n` or "O(n)"
+* If a nodes next pointer is `null` we know we are at the end of the list
+
 #### Part 3 - Stacks
 
 * Stacks are abstract data types. Like Linked List this is a concept that is programmable in multiple languages
@@ -132,7 +132,6 @@ def my_func():
 ***Five Min Exercise***
 
 * Without using the `reverse` method reverse the string "Hello World"
-
 
 
 #### Part 4 - Queues

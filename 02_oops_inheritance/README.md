@@ -91,7 +91,7 @@ lucy.speak()
 
 ```
 * The local method takes precedent over the parent method
-* Brought up in class: If all pets have a name and an age we can put it in the parents `init` method
+* If all pets have a name and an age we can put it in the parents `init` method
     * To utilize the parent `init` method we could call it inside of the child's `init` method and pass the values through to the parent
 
 ***NOTE***
