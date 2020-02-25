@@ -184,7 +184,7 @@ rect2 = Area(2, 3)
 rect3 = rect1 + rect2
 
 # This will invoke the __str__ method which returns a string representation of the instance 
-print(g)		 
+print(rect1)		 
 ```
 
  * [Dunder Methods](https://www.python-course.eu/python3_magic_methods.php)

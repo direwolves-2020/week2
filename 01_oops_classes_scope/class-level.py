@@ -15,11 +15,13 @@ class MyClass:
     def my_static_method(b):
         print("In my static method with param ", b)
 
-if __name__ == "__main__":
-    my_cls = MyClass("NY")
-    my_cls.my_instance_method()
-    my_cls.my_class_method(10)
-    my_cls.my_static_method(21)
 
-    MyClass.my_class_method(20)
-    MyClass.my_static_method(200)
+
+my_cls = MyClass("NY")
+my_cls.my_instance_method()
+my_cls.my_class_method(10)
+my_cls.my_static_method(21)
+
+
+MyClass.my_class_method(20)
+MyClass.my_static_method(200)

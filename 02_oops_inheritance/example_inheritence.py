@@ -1,4 +1,6 @@
 
+from abc import ABC, abstractmethod
+
 class Vehicle(ABC):
     wheels = 4
     terrain = "road"
@@ -8,21 +10,30 @@ class Vehicle(ABC):
         self.model = model
         self.year = year
 
+    @abstractmethod
     def drive(self):
-        print("you've started your {}".format(self.model))
+        pass
+
 
 class Car(Vehicle):
-    
+
     def two_door(self):
-        print('you drive a2 door?')
+        print("Year: {}".format(self.year))
+
+    def drive(self):
+        print("overridden")
+
+# vehicle = Vehicle("blah", "Blah", "Blah", 2020)
 
 
 car = Car("red", "Acura", "TL", 2020)
-car.drive()
 
-print("Is car an instance of Car ? {}".format(isinstance(car, Car)))
-print("Is car an instance of Vehicle ? {}".format(isinstance(car, Vehicle)))
-print("Is car an instance of Object ? {}".format(isinstance(car, object)))
+
+# car.drive()
+
+# print("Is car an instance of Car ? {}".format(isinstance(car, Car)))
+# print("Is car an instance of Vehicle ? {}".format(isinstance(car, Vehicle)))
+# print("Is car an instance of Object ? {}".format(isinstance(car, object)))
 
 
 class Motorcycle(Vehicle):
@@ -34,8 +45,8 @@ class Motorcycle(Vehicle):
 
         # The overridden code can be called using super or using the Base class name
         # Adds reusability. If needed by the overridden method, removes the need to re-write existing code 
-        # super().drive()
-        # Vehicle.drive(self)
+        super().drive()
+        Vehicle.drive(self)
 
 class Truck(Vehicle):
     wheels = 16

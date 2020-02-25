@@ -1,10 +1,10 @@
 import local
-import child.childmod as ch
+import child.childmod
 
 def check_imports():
-    print(ch.add(1,2))
+    print(child.childmod.add(1,2))
 
-    print(local.sqrt(16))
+    print(local.square(16))
 
 if __name__ == "__main__":
     check_imports()
