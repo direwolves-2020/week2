@@ -5,12 +5,10 @@
 
 * Create a class called Fizz
 
-* It has an init method and a next val. The init method has an argument, `start`
-whose default value is 0. An integer instance property called `number` is set 
-to equal `start`
+* It has a constructor that takes in an argument, `start` whose default value is 0. 
+It also has an integer instance property called `number` that is set to equal `start`
 
-* It has an instance method called `next` that takes no arguments.
-
+* It has an instance method called `next` that takes no arguments. 
 This method increases the value of `number` by 1 and then returns a string of that number's fizz value.
 
 The fizz value of n = "fizz" if n is evenly divisible by 3. If n is not divisible by 3 then the fizz value is the value of n converted into a string.
@@ -34,7 +32,7 @@ fizz
 
 * Now create a class `Buzz` that is a subclass of `Fizz`.
 
-* It should have a constructor like `Fizz` where it takes in an argument `start` with a default value of 0 but it should not have any instance variable of its own. Instead it should rely on the inherited class `Fizz`'s `number` value, which will require you to invoke the constructor of the base class `Fizz` from `Buzz`'s constructor.
+* It should have a constructor like `Fizz` where it takes in an argument `start` with a default value of 0 but it should not have any instance variable of its own. Instead it should rely on the inherited class `Fizz`'s `number` value (which will require you to invoke the constructor of the base class `Fizz` from `Buzz`'s constructor).
 
 * `Buzz` should have a method `next` which should return the next buzz value. The buzz value is the next fizz value except if the fizz value is divisible by 5 then it should return the string `buzz` (You will need to call the inherited `next()` method as well as look at the inherited value of `number`)
 
