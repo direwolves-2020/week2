@@ -49,3 +49,5 @@ buzz_test = Buzz(10)
 assert fizz_test.next() == 11, "neither fizz nor buzz"
 assert buzz_test.next() == 11, "neither fizz nor buzz"
 
+
+
