@@ -37,10 +37,10 @@ class Buzz(Fizz):
         
         if (self.number % 5 == 0):
             return "buzz"
-        elif (self.number % 3) == 0:
-            return n
-        else:
-            return str(self.number)
+        # elif (self.number % 3) == 0:
+        #     return n
+        # else:
+        #     return str(self.number)
         
         return n
 
@@ -49,3 +49,16 @@ assert buzzer.next() == "fizz"
 assert buzzer.next() == "13"
 assert buzzer.next() == "14"
 assert buzzer.next() == "buzz"
+
+
+'''
+Part 2
+Binary search trees are more efficient because the insertion/seach algorithm recursively cuts the list in half until it reaches the correct value. By finding the middle of the list, the algorithn halves the list in which to seach or insert. Worst case scenario, the algorithm will take O(log n) time, meaning the max run time will be proportional to the log of the input.
+On the other hand, linear data structures insert/search by scanning each item, one at a time. In a worst case scenario the algorithm will take O(n) time, meaning the max run time will be proportional to the size of the list. 
+
+
+Bubble sort  uses nested loops to pass through the list and compare each item to its adjacent item, and swap their positions if the first is greater than the second. The outer loop passes once, while the inner loop does so n times, then (n-1) times, etc., with each iteration. Therefore the algorithm will iterate n times and do n/2 swaps for a max run times of O(n^2).
+
+Merge sort uses a divide and conquer mechanism to recursively divide the list in half, and then divide those lists, etc., until all the items are in individual, one item lists. The algorithm then merges the sublists (these are considered sorted since there are each one unit). The new list, comprised of all the sublists, will be sorted. 
+
+'''
